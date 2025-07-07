@@ -19,7 +19,7 @@ import comedor from '../assets/comedor.jpg'
 
 const Cabins = () => {
   const [activeCabin, setActiveCabin] = useState(0)
-  const [isLoading, setIsLoading] = useState(false)
+  const [isLoading, setIsLoading] = useState({ reservar: false, verFotos: false })
   const [currentImageIndex, setCurrentImageIndex] = useState(0)
   const [isSliding, setIsSliding] = useState(false)
   const [isInView, setIsInView] = useState(false)
@@ -98,30 +98,35 @@ const Cabins = () => {
     return () => clearInterval(interval)
   }, [activeCabin, isInView])
 
+  useEffect(() => {
+    setIsLoading({ reservar: false, verFotos: false })
+    setCurrentImageIndex(0)
+  }, [activeCabin])
+
   const handleReservar = () => {
-    setIsLoading(true)
+    setIsLoading((prev) => ({ ...prev, reservar: true }))
     // Scroll to contact section
     const contactSection = document.getElementById('contacto')
     if (contactSection) {
       contactSection.scrollIntoView({ behavior: 'smooth' })
     }
     // Reset loading after scroll animation
-    setTimeout(() => setIsLoading(false), 1000)
+    setTimeout(() => setIsLoading((prev) => ({ ...prev, reservar: false })), 1000)
   }
 
   const handleVerFotos = () => {
-    setIsLoading(true)
+    setIsLoading((prev) => ({ ...prev, verFotos: true }))
     // Scroll to gallery section
     const gallerySection = document.getElementById('galeria')
     if (gallerySection) {
       gallerySection.scrollIntoView({ behavior: 'smooth' })
     }
     // Reset loading after scroll animation
-    setTimeout(() => setIsLoading(false), 1000)
+    setTimeout(() => setIsLoading((prev) => ({ ...prev, verFotos: false })), 1000)
   }
 
   return (
-    <section id="cabanas" className="section cabins" ref={sectionRef}>
+    <section id="cabanas" className="section cabins reveal-on-scroll" ref={sectionRef}>
       <div className="container">
         <h2 className="section-title">Nuestras Cabañas</h2>
         <p className="section-subtitle">
@@ -150,13 +155,11 @@ const Cabins = () => {
                   src={cabinImages[activeCabin][currentImageIndex]} 
                   alt={`${cabins[activeCabin].name} - Imagen ${currentImageIndex + 1}`} 
                   className="cabin-image-real current-image"
-                  key={`current-${activeCabin}-${currentImageIndex}`}
                 />
                 <img 
                   src={cabinImages[activeCabin][(currentImageIndex + 1) % cabinImages[activeCabin].length]} 
                   alt={`${cabins[activeCabin].name} - Imagen ${((currentImageIndex + 1) % cabinImages[activeCabin].length) + 1}`} 
                   className="cabin-image-real next-image"
-                  key={`next-${activeCabin}-${currentImageIndex}`}
                 />
               </div>
             </div>
@@ -165,16 +168,16 @@ const Cabins = () => {
               <button 
                 className="btn" 
                 onClick={handleReservar}
-                disabled={isLoading}
+                disabled={isLoading.reservar}
               >
-                {isLoading ? 'Navegando...' : 'Reservar Ahora'}
+                {isLoading.reservar ? 'Navegando...' : 'Reservar Ahora'}
               </button>
               <button 
                 className="btn btn-outline" 
                 onClick={handleVerFotos}
-                disabled={isLoading}
+                disabled={isLoading.verFotos}
               >
-                {isLoading ? 'Navegando...' : 'Ver Más Fotos'}
+                {isLoading.verFotos ? 'Navegando...' : 'Ver Más Fotos'}
               </button>
             </div>
           </div>

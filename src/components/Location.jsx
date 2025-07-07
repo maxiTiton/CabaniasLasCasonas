@@ -8,7 +8,7 @@ const Location = () => {
   }
 
   return (
-    <section id="ubicacion" className="section location">
+    <section id="ubicacion" className="section location reveal-on-scroll">
       <div className="container">
         <h2 className="section-title" id="nuestra-ubicacion">Nuestra Ubicación</h2>
         

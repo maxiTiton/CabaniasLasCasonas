@@ -24,7 +24,7 @@ const Hero = () => {
           <p className="hero-subtitle">
             Una experiencia única en las sierras de Córdoba
           </p>
-          
+          <div className="hero-divider"></div>
           <div className="hero-buttons">
             <button 
               className="btn"

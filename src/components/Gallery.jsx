@@ -180,7 +180,7 @@ const Gallery = () => {
   }
 
   return (
-    <section id="galeria" className="section gallery">
+    <section id="galeria" className="section gallery reveal-on-scroll">
       <div className="container">
         <h2 className="section-title" id="galeria-de-imagenes">Galería de Imágenes</h2>
         <p className="section-subtitle">
