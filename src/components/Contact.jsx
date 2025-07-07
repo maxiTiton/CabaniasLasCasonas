@@ -13,7 +13,7 @@ const Contact = () => {
   }
 
   return (
-    <section id="contacto" className="section contact">
+    <section id="contacto" className="section contact reveal-on-scroll">
       <div className="container">
         <h2 className="section-title">Contactanos</h2>
         <p className="section-subtitle">
@@ -22,7 +22,7 @@ const Contact = () => {
         
         <div className="contact-content">
           <div className="contact-info">
-            <div className="info-card">
+            <div className="info-card reveal-on-scroll">
               <div className="info-icon">
                 <i className="fab fa-whatsapp"></i>
               </div>
@@ -33,7 +33,7 @@ const Contact = () => {
               </button>
             </div>
             
-            <div className="info-card">
+            <div className="info-card reveal-on-scroll">
               <div className="info-icon">
                 <i className="fas fa-envelope"></i>
               </div>
