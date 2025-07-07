@@ -10,7 +10,7 @@ const Location = () => {
   return (
     <section id="ubicacion" className="section location">
       <div className="container">
-        <h2 className="section-title">Nuestra Ubicación</h2>
+        <h2 className="section-title" id="nuestra-ubicacion">Nuestra Ubicación</h2>
         
         <div className="location-content">
           <div className="map-container">

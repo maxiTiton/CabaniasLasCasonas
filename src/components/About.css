@@ -147,4 +147,226 @@
   .value-card {
     padding: 1.5rem;
   }
+}
+
+.about-main {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 36px;
+  max-width: 1100px;
+  margin: 0 auto 2.5rem auto;
+  flex-wrap: nowrap;
+  width: 100%;
+  box-sizing: border-box;
+}
+
+.about-image-block {
+  flex: 1 1 320px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.about-main-image {
+  width: 340px;
+  max-width: 90vw;
+  height: 220px;
+  object-fit: cover;
+  border-radius: 18px;
+  box-shadow: 0 4px 18px rgba(139,69,19,0.13);
+  border: 2px solid var(--border-color);
+}
+
+.about-text-block {
+  flex: 0 0 50%;
+  max-width: 50%;
+  min-width: 0;
+  display: flex;
+  align-items: center;
+  justify-content: flex-start;
+  box-sizing: border-box;
+}
+
+.about-main-text {
+  font-size: 1.15rem;
+  color: var(--text-dark);
+  background: #fff8f0;
+  border-radius: 15px;
+  padding: 2rem 2.2rem;
+  box-shadow: 0 2px 12px rgba(139,69,19,0.07);
+  line-height: 1.7;
+  text-align: left;
+  font-family: var(--font-serif);
+}
+
+.about-cards-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+  gap: 1.5rem;
+  max-width: 900px;
+  margin: 0 auto;
+}
+
+.about-info-card {
+  background: #fff;
+  border-radius: 15px;
+  box-shadow: 0 2px 10px rgba(139,69,19,0.08);
+  padding: 1.3rem 1.2rem 1.1rem 1.2rem;
+  display: flex;
+  align-items: flex-start;
+  gap: 1.1rem;
+  border: 1.5px solid var(--border-color);
+  min-height: 90px;
+}
+
+.about-info-icon {
+  font-size: 2.1rem;
+  line-height: 1;
+  margin-top: 0.1em;
+}
+
+.about-info-content h4 {
+  margin: 0 0 0.2em 0;
+  font-size: 1.08rem;
+  color: var(--primary-color);
+  font-family: var(--font-serif);
+  font-weight: 700;
+}
+
+.about-info-content p {
+  margin: 0;
+  color: var(--text-light);
+  font-size: 0.98rem;
+  line-height: 1.5;
+}
+
+@media (max-width: 900px) {
+  .about-main {
+    flex-direction: column;
+    gap: 2rem;
+    flex-wrap: wrap;
+  }
+  .about-main-image {
+    width: 98vw;
+    max-width: 98vw;
+    height: 180px;
+  }
+  .about-main-text {
+    padding: 1.2rem 1rem;
+    font-size: 1.05rem;
+  }
+  .about-collage-block, .about-text-block {
+    max-width: 100%;
+    flex: 1 1 100%;
+  }
+  .about-collage-grid {
+    width: 98vw;
+    max-width: 340px;
+    height: 180px;
+    gap: 8px;
+  }
+}
+
+.about-cards-wide {
+  display: flex;
+  justify-content: space-between;
+  align-items: stretch;
+  gap: 2rem;
+  margin: 2.5rem auto 0 auto;
+  max-width: 1100px;
+  flex-wrap: wrap;
+}
+
+.about-cards-wide .about-info-card {
+  flex: 1 1 0;
+  min-width: 210px;
+  max-width: 300px;
+  background: #fff;
+  border-radius: 15px;
+  box-shadow: 0 2px 10px rgba(139,69,19,0.08);
+  padding: 1.3rem 1.2rem 1.1rem 1.2rem;
+  display: flex;
+  align-items: flex-start;
+  gap: 1.1rem;
+  border: 1.5px solid var(--border-color);
+  min-height: 90px;
+}
+
+.about-cards-wide .about-info-icon {
+  font-size: 2.1rem;
+  line-height: 1;
+  margin-top: 0.1em;
+  color: var(--primary-color);
+  min-width: 32px;
+  text-align: center;
+}
+
+.about-cards-wide .about-info-icon.fa-solid {
+  font-family: "Font Awesome 6 Free";
+  font-weight: 900;
+}
+
+@media (max-width: 900px) {
+  .about-cards-wide {
+    flex-direction: column;
+    gap: 1.2rem;
+    align-items: stretch;
+  }
+  .about-cards-wide .about-info-card {
+    max-width: 100%;
+  }
+}
+
+.about-collage-block {
+  flex: 0 0 50%;
+  max-width: 50%;
+  min-width: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  box-sizing: border-box;
+  height: 100%;
+}
+
+.about-collage-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  grid-template-rows: 1fr 1fr;
+  gap: 14px;
+  width: 98%;
+  max-width: 440px;
+  height: 440px;
+}
+
+.about-collage-img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  border-radius: 18px;
+  box-shadow: 0 2px 10px rgba(139,69,19,0.10);
+  /* border: 2px solid var(--border-color); */
+  background: #f8f8f8;
+}
+
+.about-collage-img1 { grid-column: 1; grid-row: 1; }
+.about-collage-img2 { grid-column: 2; grid-row: 1; }
+.about-collage-img3 { grid-column: 1; grid-row: 2; }
+.about-collage-img4 { grid-column: 2; grid-row: 2; }
+
+@media (max-width: 1100px) {
+  .about-main {
+    flex-direction: column;
+    gap: 2rem;
+  }
+  .about-collage-block, .about-text-block {
+    max-width: 100%;
+    flex: 1 1 100%;
+  }
+  .about-collage-grid {
+    width: 98vw;
+    max-width: 340px;
+    height: 180px;
+    gap: 8px;
+  }
 } 

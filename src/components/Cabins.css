@@ -1,5 +1,5 @@
 .cabins {
-  background: #7A3D10;
+  background: #4E2A0E;
   color: white;
 }
 
@@ -205,10 +205,24 @@
 
 .cabin-actions {
   display: flex;
-  gap: 1rem;
-  flex-wrap: wrap;
+  flex-direction: row;
+  gap: 1.2rem;
+  margin-top: 1.5rem;
   justify-content: center;
-  margin: 2rem 0;
+  align-items: center;
+}
+
+.cabin-actions .btn, .cabin-actions .btn-outline {
+  padding: 12px 36px;
+  font-size: 1rem;
+  border-radius: 25px;
+  min-height: unset;
+  height: 44px;
+  line-height: 1.2;
+  box-shadow: var(--shadow);
+  white-space: nowrap;
+  padding-left: 24px;
+  padding-right: 24px;
 }
 
 .cabin-actions .btn {
@@ -216,10 +230,6 @@
   color: #4A2C1A;
   border: 2px solid #F5F5F5;
   font-weight: 600;
-  padding: 15px 30px;
-  font-size: 1.1rem;
-  border-radius: 25px;
-  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
   transition: all 0.3s ease;
 }
 

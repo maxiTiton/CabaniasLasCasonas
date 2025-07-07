@@ -182,7 +182,7 @@ const Gallery = () => {
   return (
     <section id="galeria" className="section gallery">
       <div className="container">
-        <h2 className="section-title">Galería de Imágenes</h2>
+        <h2 className="section-title" id="galeria-de-imagenes">Galería de Imágenes</h2>
         <p className="section-subtitle">
         Explorá nuestras cabañas y el paisaje serrano que las acompaña
         </p>
