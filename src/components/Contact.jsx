@@ -13,7 +13,7 @@ const Contact = () => {
   }
 
   return (
-    <section id="contacto" className="section contact">
+    <section id="contacto" className="section contact reveal-on-scroll fade-up">
       <div className="container">
         <h2 className="section-title">Contactanos</h2>
         <p className="section-subtitle">
