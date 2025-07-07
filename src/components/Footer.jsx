@@ -19,7 +19,7 @@ const Footer = () => {
   }
 
   return (
-    <footer className="footer">
+    <footer className="footer reveal-on-scroll">
       <div className="container">
         <div className="footer-content">
           <div className="footer-info">

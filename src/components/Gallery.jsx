@@ -180,7 +180,7 @@ const Gallery = () => {
   }
 
   return (
-    <section id="galeria" className="section gallery">
+    <section id="galeria" className="section gallery reveal-on-scroll">
       <div className="container">
         <h2 className="section-title" id="galeria-de-imagenes">Galería de Imágenes</h2>
         <p className="section-subtitle">
@@ -204,7 +204,7 @@ const Gallery = () => {
           {filteredImages.map((image, index) => (
             <div
               key={image.id}
-              className="gallery-item"
+              className="gallery-item reveal-on-scroll"
               onClick={() => handleImageClick(index)}
             >
               <img src={image.image} alt={image.title} className="gallery-image-real" />
