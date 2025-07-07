@@ -1,0 +1,126 @@
+.contact {
+  background: #7A3D10;
+  color: white;
+}
+
+.contact .section-title {
+  color: #F5F5F5;
+  text-shadow: 0 2px 4px rgba(0, 0, 0, 0.3);
+}
+
+.contact .section-title::after {
+  background: linear-gradient(90deg, #F5F5F5, #D0D0D0);
+}
+
+.contact .section-subtitle {
+  color: rgba(245, 245, 245, 0.8);
+}
+
+.contact-content {
+  display: flex;
+  justify-content: center;
+  margin-bottom: 3rem;
+}
+
+.contact-info {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 2rem;
+  max-width: 600px;
+}
+
+.info-card {
+  background: rgba(255, 255, 255, 0.95);
+  padding: 2rem;
+  border-radius: 15px;
+  text-align: center;
+  box-shadow: var(--shadow);
+  border: 1px solid rgba(255, 255, 255, 0.3);
+  transition: transform 0.3s ease;
+  display: flex;
+  flex-direction: column;
+  height: 100%;
+}
+
+.info-card:hover {
+  transform: translateY(-3px);
+  background: white;
+  border-color: rgba(255, 255, 255, 0.5);
+}
+
+.info-icon {
+  font-size: 3rem;
+  margin-bottom: 1rem;
+  color: #25A244;
+}
+
+.info-card:nth-child(2) .info-icon {
+  color: #D32F2F;
+}
+
+.info-card h4 {
+  font-size: 1.4rem;
+  color: #25A244;
+  margin-bottom: 1rem;
+  font-family: var(--font-serif);
+  font-weight: bold;
+}
+
+.info-card:nth-child(2) h4 {
+  color: #D32F2F;
+}
+
+.info-card p {
+  color: var(--text-dark);
+  line-height: 1.6;
+  font-size: 1rem;
+  margin-bottom: 1.5rem;
+  flex-grow: 1;
+}
+
+.contact-btn {
+  background: var(--primary-color);
+  color: white;
+  border: none;
+  padding: 0.8rem 1.5rem;
+  border-radius: 25px;
+  font-size: 1rem;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  font-weight: 500;
+  width: 100%;
+  margin-top: auto;
+}
+
+.contact-btn:hover {
+  background: var(--secondary-color);
+  transform: translateY(-2px);
+}
+
+.contact-btn.whatsapp {
+  background: #25A244;
+}
+
+.contact-btn.whatsapp:hover {
+  background: #1E8E3E;
+}
+
+.contact-btn.email {
+  background: #D32F2F;
+}
+
+.contact-btn.email:hover {
+  background: #B71C1C;
+}
+
+@media (max-width: 768px) {
+  .contact-info {
+    grid-template-columns: 1fr;
+    gap: 1.5rem;
+    max-width: 100%;
+  }
+  
+  .info-card {
+    padding: 1.5rem;
+  }
+} 
