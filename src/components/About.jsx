@@ -5,6 +5,7 @@ import fachadaNoche2 from '../assets/fachadaNoche2.jpg'
 import fachada1 from '../assets/fachada1.jpg'
 import balcon from '../assets/balcon.jpg'
 import alpaCorral from '../assets/alpaCorral.avif'
+import florero from '../assets/florero.jpg'
 
 const infoCards = [
   {
@@ -31,16 +32,16 @@ const infoCards = [
 
 const About = () => {
   return (
-    <section id="nosotros" className="section about">
+    <section id="nosotros" className="section about reveal-on-scroll">
       <div className="container">
         <h2 className="section-title">Sobre Nosotros</h2>
         <p className="section-subtitle">
-          Disfruta de la naturaleza en nuestras cabañas coloniales con el confort que merecés
+          Disfrutá de la naturaleza en nuestras cabañas coloniales con el confort que merecés
         </p>
         <div className="about-main">
           <div className="about-collage-block">
             <div className="about-collage-grid">
-              <img src={fachadaNoche2} alt="Fachada de noche" className="about-collage-img about-collage-img1" />
+              <img src={florero} alt="Florero" className="about-collage-img about-collage-img1" />
               <img src={fachada1} alt="Fachada día" className="about-collage-img about-collage-img2" />
               <img src={balcon} alt="Balcón" className="about-collage-img about-collage-img3" />
               <img src={alpaCorral} alt="Alpa Corral" className="about-collage-img about-collage-img4" />
