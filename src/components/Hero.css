@@ -241,7 +241,7 @@
   }
   
   .hero-title {
-    font-size: 2.2rem;
+    font-size: 3.2rem;
   }
   
   .hero-subtitle {
@@ -261,6 +261,9 @@
   .hero-buttons .btn {
     padding: 12px 28px;
     font-size: 1rem;
+    min-width: unset;
+    max-width: unset;
+    text-align: unset;
   }
   
   .hero-divider {
@@ -289,7 +292,7 @@
   }
   
   .hero-title {
-    font-size: 1.8rem;
+    font-size: 2.8rem;
   }
   
   .hero-subtitle {
@@ -303,6 +306,9 @@
   .hero-buttons .btn {
     padding: 10px 24px;
     font-size: 0.95rem;
+    min-width: unset;
+    max-width: unset;
+    text-align: unset;
   }
   
   .hero-divider {

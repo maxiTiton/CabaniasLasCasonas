@@ -362,6 +362,17 @@
   
   .cabin-left {
     gap: 1.5rem;
+    min-height: auto;
+    display: flex;
+    flex-direction: column;
+  }
+  
+  .cabin-image {
+    margin-top: 0;
+  }
+  
+  .image-container {
+    height: 280px;
   }
   
   .cabin-image-real {
@@ -369,8 +380,10 @@
   }
   
   .cabin-meta {
-    flex-direction: column;
-    gap: 0.5rem;
+    flex-direction: row;
+    gap: 0.8rem;
+    flex-wrap: wrap;
+    justify-content: left;
   }
   
   .amenities-grid {
@@ -382,6 +395,9 @@
     flex-direction: column;
     align-items: center;
     gap: 1rem;
+    margin-top: 1rem;
+    position: relative;
+    z-index: 10;
   }
   
   .cabin-actions .btn {
@@ -416,8 +432,16 @@
     padding: 1rem;
   }
   
+  .image-container {
+    height: 240px;
+  }
+  
   .cabin-image-real {
     height: 240px;
+  }
+  
+  .cabin-meta {
+    gap: 0.6rem;
   }
   
   .cabin-actions .btn {
