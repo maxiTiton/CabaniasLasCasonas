@@ -39,7 +39,39 @@
 }
 
 @media (max-width: 768px) {
+  .location {
+    padding: 3rem 0;
+  }
+  
+  .location-content {
+    margin-top: 2rem;
+  }
+  
   .map-container iframe {
     height: 300px;
+  }
+  
+  .map-btn {
+    padding: 0.8rem 1.8rem;
+    font-size: 1rem;
+  }
+}
+
+@media (max-width: 480px) {
+  .location {
+    padding: 2rem 0;
+  }
+  
+  .location-content {
+    margin-top: 1.5rem;
+  }
+  
+  .map-container iframe {
+    height: 250px;
+  }
+  
+  .map-btn {
+    padding: 0.7rem 1.5rem;
+    font-size: 0.95rem;
   }
 } 

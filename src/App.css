@@ -128,8 +128,48 @@ body {
     font-size: 2rem;
   }
   
+  .section-subtitle {
+    font-size: 1.1rem;
+  }
+  
   .container {
     padding: 0 15px;
+  }
+  
+  .btn {
+    padding: 10px 25px;
+    font-size: 0.95rem;
+  }
+  
+  .card {
+    padding: 1.5rem;
+  }
+}
+
+@media (max-width: 480px) {
+  .section {
+    padding: 40px 0;
+  }
+  
+  .section-title {
+    font-size: 1.8rem;
+  }
+  
+  .section-subtitle {
+    font-size: 1rem;
+  }
+  
+  .container {
+    padding: 0 10px;
+  }
+  
+  .btn {
+    padding: 8px 20px;
+    font-size: 0.9rem;
+  }
+  
+  .card {
+    padding: 1.2rem;
   }
 }
 
@@ -179,6 +219,34 @@ html {
 .reveal-on-scroll.visible {
   opacity: 1;
   transform: translateY(0);
+}
+
+/* En mobile, mostrar elementos inmediatamente */
+@media (max-width: 768px) {
+  .reveal-on-scroll {
+    opacity: 1;
+    transform: translateY(0);
+  }
+  
+  .reveal-on-scroll.fade-up {
+    transform: translateY(0);
+  }
+  
+  .reveal-on-scroll.fade-in {
+    transform: scale(1);
+  }
+  
+  .reveal-on-scroll.slide-left {
+    transform: translateX(0);
+  }
+  
+  .reveal-on-scroll.slide-right {
+    transform: translateX(0);
+  }
+  
+  .reveal-on-scroll.slide-up {
+    transform: translateY(0);
+  }
 }
 
 /* Variaciones de animación para diferentes componentes */

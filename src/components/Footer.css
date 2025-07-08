@@ -76,4 +76,26 @@
     height: 45px;
     font-size: 1.3rem;
   }
+}
+
+@media (max-width: 480px) {
+  .footer {
+    padding: 1.2rem 0;
+  }
+  
+  .footer-info h3 {
+    font-size: 1.2rem;
+  }
+  
+  .footer-info p {
+    font-size: 0.75rem;
+  }
+  
+  .scroll-to-top {
+    bottom: 0.8rem;
+    right: 0.8rem;
+    width: 40px;
+    height: 40px;
+    font-size: 1.2rem;
+  }
 } 

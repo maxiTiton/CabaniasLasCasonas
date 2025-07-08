@@ -123,4 +123,48 @@
   .info-card {
     padding: 1.5rem;
   }
+  
+  .info-icon {
+    font-size: 2.5rem;
+  }
+  
+  .info-card h4 {
+    font-size: 1.3rem;
+  }
+  
+  .info-card p {
+    font-size: 0.95rem;
+  }
+  
+  .contact-btn {
+    padding: 0.7rem 1.3rem;
+    font-size: 0.95rem;
+  }
+}
+
+@media (max-width: 480px) {
+  .contact-info {
+    gap: 1rem;
+  }
+  
+  .info-card {
+    padding: 1.2rem;
+  }
+  
+  .info-icon {
+    font-size: 2.2rem;
+  }
+  
+  .info-card h4 {
+    font-size: 1.2rem;
+  }
+  
+  .info-card p {
+    font-size: 0.9rem;
+  }
+  
+  .contact-btn {
+    padding: 0.6rem 1.2rem;
+    font-size: 0.9rem;
+  }
 } 

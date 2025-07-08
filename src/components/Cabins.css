@@ -346,11 +346,13 @@
   .cabins-tabs {
     flex-direction: column;
     align-items: center;
+    gap: 0.8rem;
   }
   
   .cabin-tab {
     width: 100%;
     max-width: 300px;
+    padding: 1.2rem;
   }
   
   .cabin-details {
@@ -363,7 +365,7 @@
   }
   
   .cabin-image-real {
-    height: 300px;
+    height: 280px;
   }
   
   .cabin-meta {
@@ -376,13 +378,17 @@
     gap: 0.5rem;
   }
   
-  .cabin-left {
-    gap: 1.5rem;
-  }
-  
   .cabin-actions {
     flex-direction: column;
     align-items: center;
+    gap: 1rem;
+  }
+  
+  .cabin-actions .btn {
+    width: 100%;
+    max-width: 250px;
+    padding: 12px 24px;
+    font-size: 1rem;
   }
   
   .gallery-grid {
@@ -397,5 +403,39 @@
   .cabins-features {
     grid-template-columns: 1fr;
     gap: 1.5rem;
+  }
+}
+
+@media (max-width: 480px) {
+  .cabins-tabs {
+    gap: 0.6rem;
+  }
+  
+  .cabin-tab {
+    max-width: 280px;
+    padding: 1rem;
+  }
+  
+  .cabin-image-real {
+    height: 240px;
+  }
+  
+  .cabin-actions .btn {
+    max-width: 220px;
+    padding: 10px 20px;
+    font-size: 0.95rem;
+  }
+  
+  .amenities-grid {
+    grid-template-columns: 1fr;
+    gap: 0.4rem;
+  }
+  
+  .cabin-header h3 {
+    font-size: 1.6rem;
+  }
+  
+  .cabin-description {
+    font-size: 1rem;
   }
 } 
