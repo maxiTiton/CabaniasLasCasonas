@@ -386,6 +386,10 @@
     justify-content: left;
   }
   
+  .cabin-amenities h4 {
+    margin-bottom: 0.5rem;
+  }
+  
   .amenities-grid {
     grid-template-columns: repeat(auto-fit, minmax(160px, 1fr));
     gap: 0.5rem;
@@ -442,6 +446,10 @@
   
   .cabin-meta {
     gap: 0.6rem;
+  }
+  
+  .cabin-amenities h4 {
+    margin-bottom: 0.4rem;
   }
   
   .cabin-actions .btn {

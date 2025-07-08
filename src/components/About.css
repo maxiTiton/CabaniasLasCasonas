@@ -314,7 +314,7 @@
   .about-cards-wide {
     flex-direction: column;
     gap: 1rem;
-    margin: 2rem auto 0 auto;
+    margin: 1rem auto 0 auto;
   }
   
   .about-cards-wide .about-info-card {
@@ -360,7 +360,7 @@
   
   .about-cards-wide {
     gap: 0.8rem;
-    margin: 1.5rem auto 0 auto;
+    margin: 0.8rem auto 0 auto;
   }
   
   .about-cards-wide .about-info-card {

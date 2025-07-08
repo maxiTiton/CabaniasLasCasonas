@@ -118,10 +118,41 @@
     grid-template-columns: 1fr;
     gap: 1.5rem;
     max-width: 100%;
+    margin-top: 1rem;
+  }
+  
+  .info-card {
+    padding: 1.8rem;
+    min-height: 120px;
+  }
+  
+  .info-icon {
+    font-size: 2.8rem;
+  }
+  
+  .info-card h4 {
+    font-size: 1.4rem;
+  }
+  
+  .info-card p {
+    font-size: 1rem;
+  }
+  
+  .contact-btn {
+    padding: 0.8rem 1.5rem;
+    font-size: 1rem;
+  }
+}
+
+@media (max-width: 480px) {
+  .contact-info {
+    gap: 1rem;
+    margin-top: 0.8rem;
   }
   
   .info-card {
     padding: 1.5rem;
+    min-height: 110px;
   }
   
   .info-icon {
@@ -137,34 +168,7 @@
   }
   
   .contact-btn {
-    padding: 0.7rem 1.3rem;
+    padding: 0.7rem 1.4rem;
     font-size: 0.95rem;
-  }
-}
-
-@media (max-width: 480px) {
-  .contact-info {
-    gap: 1rem;
-  }
-  
-  .info-card {
-    padding: 1.2rem;
-  }
-  
-  .info-icon {
-    font-size: 2.2rem;
-  }
-  
-  .info-card h4 {
-    font-size: 1.2rem;
-  }
-  
-  .info-card p {
-    font-size: 0.9rem;
-  }
-  
-  .contact-btn {
-    padding: 0.6rem 1.2rem;
-    font-size: 0.9rem;
   }
 } 
