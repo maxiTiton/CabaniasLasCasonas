@@ -57,7 +57,7 @@ const About = () => {
         </div>
         <div className="about-cards-wide">
           {infoCards.map((card, idx) => (
-            <div className="about-info-card" key={idx}>
+            <div className="about-info-card reveal-on-scroll fade-up" key={idx}>
               <div className={`about-info-icon fa-solid ${card.icon}`}></div>
               <div className="about-info-content">
                 <h4>{card.title}</h4>

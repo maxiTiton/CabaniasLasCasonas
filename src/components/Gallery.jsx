@@ -1,4 +1,4 @@
-import React, { useState, useRef } from 'react'
+import React, { useState, useRef, useEffect } from 'react'
 import './Gallery.css'
 import fachada1 from '../assets/fachada1.jpg'
 import fachada2 from '../assets/fachada2.jpg'
@@ -47,7 +47,6 @@ import frente from '../assets/frente.jpg'
 
 const Gallery = () => {
   const [activeImage, setActiveImage] = useState(0)
-  const [showFullImage, setShowFullImage] = useState(false)
   const lightboxRef = useRef(null)
 
   const images = [
@@ -146,6 +145,11 @@ const Gallery = () => {
 
   const [activeCategory, setActiveCategory] = useState('some')
 
+  // Reset activeImage when category changes
+  useEffect(() => {
+    setActiveImage(0)
+  }, [activeCategory])
+
   const allImages = [
     fachada1, fachada2, fachada3, fachada4, fachadaNoche, fachadaNoche2, frente, cocheras, cochera, cochera2, balcon, asador, comedor, comedor2, comedor3, cocina, cocina2, hogar, habitacionGrande, habitacionChica, habitacionArriba, habitacionArriba2, grande, cama, cama2, camasGrande, baño, baños, baños2, baño2, baño3, baño4, baño5, baño6, baño7, ducha, puerta, tele, ventanas, cafe, estante, florero
   ]
@@ -160,24 +164,34 @@ const Gallery = () => {
       ? images
       : images.filter(img => img.category === activeCategory)
 
+  // Ensure activeImage is always valid
+  useEffect(() => {
+    if (activeImage >= filteredImages.length) {
+      setActiveImage(0)
+    }
+  }, [filteredImages, activeImage])
+
+
+
   const handleImageClick = (index) => {
     setActiveImage(index)
-    // Hacer scroll suave hasta el carrusel
+    // Hacer scroll suave hasta el carrusel con offset hacia arriba
     setTimeout(() => {
-      lightboxRef.current?.scrollIntoView({ 
-        behavior: 'smooth',
-        block: 'center'
-      })
+      const lightboxElement = lightboxRef.current
+      if (lightboxElement) {
+        const rect = lightboxElement.getBoundingClientRect()
+        const windowHeight = window.innerHeight
+        const elementHeight = rect.height
+        const scrollOffset = rect.top + (elementHeight / 2) - (windowHeight / 2) - 30 // 30px hacia arriba
+        window.scrollBy({
+          top: scrollOffset,
+          behavior: 'smooth'
+        })
+      }
     }, 100)
   }
 
-  const openFullImage = () => {
-    setShowFullImage(true)
-  }
 
-  const closeFullImage = () => {
-    setShowFullImage(false)
-  }
 
   return (
     <section id="galeria" className="section gallery reveal-on-scroll fade-up">
@@ -200,7 +214,7 @@ const Gallery = () => {
           ))}
         </div>
         
-        <div className="gallery-grid">
+        <div className="gallery-grid" key={`gallery-${activeCategory}`}>
           {filteredImages.map((image, index) => (
             <div
               key={image.id}
@@ -223,14 +237,7 @@ const Gallery = () => {
                 src={filteredImages[activeImage]?.image} 
                 alt={filteredImages[activeImage]?.title} 
                 className="lightbox-image-real"
-                onClick={openFullImage}
-                style={{ cursor: 'pointer' }}
               />
-            </div>
-            
-            <div className="lightbox-info">
-              <h3>{filteredImages[activeImage]?.title}</h3>
-              <p>{filteredImages[activeImage]?.description}</p>
             </div>
             
             <div className="lightbox-nav">
@@ -252,23 +259,6 @@ const Gallery = () => {
             </div>
           </div>
         </div>
-        
-        {showFullImage && (
-          <div className="full-image-overlay" onClick={closeFullImage}>
-            <div className="full-image-content" onClick={(e) => e.stopPropagation()}>
-              <button className="full-image-close" onClick={closeFullImage}>×</button>
-              <img 
-                src={filteredImages[activeImage]?.image} 
-                alt={filteredImages[activeImage]?.title} 
-                className="full-image"
-              />
-              <div className="full-image-info">
-                <h3>{filteredImages[activeImage]?.title}</h3>
-                <p>{filteredImages[activeImage]?.description}</p>
-              </div>
-            </div>
-          </div>
-        )}
       </div>
     </section>
   )

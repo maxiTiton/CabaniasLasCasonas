@@ -213,3 +213,23 @@ html {
 .reveal-on-scroll.slide-right.visible {
   transform: translateX(0);
 }
+
+.reveal-on-scroll.slide-up {
+  transform: translateY(30px);
+}
+
+.reveal-on-scroll.slide-up.visible {
+  transform: translateY(0);
+}
+
+/* Animación suave para imágenes de galería */
+.gallery-fade-in {
+  opacity: 0;
+  transform: scale(0.98);
+  transition: opacity 0.6s ease-out, transform 0.6s ease-out;
+}
+
+.gallery-fade-in.visible {
+  opacity: 1;
+  transform: scale(1);
+}

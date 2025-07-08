@@ -22,7 +22,7 @@ const Contact = () => {
         
         <div className="contact-content">
           <div className="contact-info">
-            <div className="info-card">
+            <div className="info-card reveal-on-scroll fade-up">
               <div className="info-icon">
                 <i className="fab fa-whatsapp"></i>
               </div>
@@ -33,7 +33,7 @@ const Contact = () => {
               </button>
             </div>
             
-            <div className="info-card">
+            <div className="info-card reveal-on-scroll fade-up">
               <div className="info-icon">
                 <i className="fas fa-envelope"></i>
               </div>

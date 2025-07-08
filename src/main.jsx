@@ -7,6 +7,7 @@ import App from './App.jsx'
 if (typeof window !== 'undefined') {
   window.addEventListener('DOMContentLoaded', () => {
     const revealEls = document.querySelectorAll('.reveal-on-scroll');
+    const galleryEls = document.querySelectorAll('.gallery-fade-in');
     const observer = new window.IntersectionObserver(
       (entries) => {
         entries.forEach(entry => {
@@ -19,6 +20,7 @@ if (typeof window !== 'undefined') {
       { threshold: 0.13 }
     );
     revealEls.forEach(el => observer.observe(el));
+    galleryEls.forEach(el => observer.observe(el));
   });
 }
 

@@ -19,7 +19,7 @@ const Footer = () => {
   }
 
   return (
-    <footer className="footer reveal-on-scroll fade-up">
+    <footer className="footer reveal-on-scroll slide-up">
       <div className="container">
         <div className="footer-content">
           <div className="footer-info">

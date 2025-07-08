@@ -21,7 +21,6 @@ const Cabins = () => {
   const [activeCabin, setActiveCabin] = useState(0)
   const [isLoading, setIsLoading] = useState({ reservar: false, verFotos: false })
   const [currentImageIndex, setCurrentImageIndex] = useState(0)
-  const [isSliding, setIsSliding] = useState(false)
   const [isInView, setIsInView] = useState(false)
   const sectionRef = useRef(null)
 
@@ -86,17 +85,17 @@ const Cabins = () => {
   useEffect(() => {
     if (!isInView) return
     const interval = setInterval(() => {
-      setIsSliding(true)
-      setTimeout(() => {
-        setCurrentImageIndex((prevIndex) => {
-          const images = cabinImages[activeCabin]
-          return (prevIndex + 1) % images.length
-        })
-        setIsSliding(false)
-      }, 1500)
+      setCurrentImageIndex((prevIndex) => {
+        const images = cabinImages[activeCabin]
+        return (prevIndex + 1) % images.length
+      })
     }, 5000)
     return () => clearInterval(interval)
   }, [activeCabin, isInView])
+
+
+
+
 
   useEffect(() => {
     setIsLoading({ reservar: false, verFotos: false })
@@ -150,16 +149,11 @@ const Cabins = () => {
         <div className="cabin-details">
           <div className="cabin-left">
             <div className="cabin-image">
-              <div className={`image-container ${isSliding ? 'sliding' : ''}`}>
+              <div className="image-container">
                 <img 
                   src={cabinImages[activeCabin][currentImageIndex]} 
                   alt={`${cabins[activeCabin].name} - Imagen ${currentImageIndex + 1}`} 
-                  className="cabin-image-real current-image"
-                />
-                <img 
-                  src={cabinImages[activeCabin][(currentImageIndex + 1) % cabinImages[activeCabin].length]} 
-                  alt={`${cabins[activeCabin].name} - Imagen ${((currentImageIndex + 1) % cabinImages[activeCabin].length) + 1}`} 
-                  className="cabin-image-real next-image"
+                  className="cabin-image-real"
                 />
               </div>
             </div>
@@ -199,7 +193,7 @@ const Cabins = () => {
               <h4>Comodidades incluidas:</h4>
               <div className="amenities-grid">
                 {cabins[activeCabin].amenities.map((amenity, index) => (
-                  <div key={index} className="amenity-item">
+                  <div key={index} className="amenity-item reveal-on-scroll fade-up">
                     <i className={`amenity-icon ${amenity.icon}`}></i>
                     <span>{amenity.text}</span>
                   </div>
