@@ -102,26 +102,21 @@ const Cabins = () => {
     setCurrentImageIndex(0)
   }, [activeCabin])
 
-  const handleReservar = () => {
-    setIsLoading((prev) => ({ ...prev, reservar: true }))
-    // Scroll to contact section
-    const contactSection = document.getElementById('contacto')
-    if (contactSection) {
-      contactSection.scrollIntoView({ behavior: 'smooth' })
+  // --- Reemplazo de funciones de scroll ---
+  const scrollToSection = (sectionId) => {
+    const element = document.getElementById(sectionId)
+    if (element) {
+      element.scrollIntoView({ behavior: 'smooth' })
     }
-    // Reset loading after scroll animation
-    setTimeout(() => setIsLoading((prev) => ({ ...prev, reservar: false })), 1000)
+  }
+
+  // Reemplazo handleReservar y handleVerFotos para usar scrollToSection
+  const handleReservar = () => {
+    scrollToSection('contacto')
   }
 
   const handleVerFotos = () => {
-    setIsLoading((prev) => ({ ...prev, verFotos: true }))
-    // Scroll to gallery section
-    const gallerySection = document.getElementById('galeria')
-    if (gallerySection) {
-      gallerySection.scrollIntoView({ behavior: 'smooth' })
-    }
-    // Reset loading after scroll animation
-    setTimeout(() => setIsLoading((prev) => ({ ...prev, verFotos: false })), 1000)
+    scrollToSection('galeria')
   }
 
   return (

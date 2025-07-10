@@ -211,15 +211,19 @@ html {
 
 .reveal-on-scroll {
   opacity: 0;
+  -webkit-transform: translateY(30px);
   transform: translateY(30px);
+  -webkit-transition: opacity 1s cubic-bezier(0.4, 0, 0.2, 1), transform 1s cubic-bezier(0.4, 0, 0.2, 1);
   transition: opacity 1s cubic-bezier(0.4, 0, 0.2, 1), transform 1s cubic-bezier(0.4, 0, 0.2, 1);
   will-change: opacity, transform;
 }
 
 .reveal-on-scroll.visible {
   opacity: 1;
+  -webkit-transform: translateY(0);
   transform: translateY(0);
 }
+
 
 /* En mobile, mostrar elementos inmediatamente */
 @media (max-width: 768px) {
