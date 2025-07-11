@@ -40,7 +40,9 @@ const Cabins = () => {
         { text: "Cocina Equipada", icon: "fa-solid fa-utensils" },
         { text: "Galería-cochera individual", icon: "fa-solid fa-car" },
         { text: "Calefactores en cada ambiente", icon: "fa-solid fa-thermometer-half" },
-        { text: "Ropa blanca", icon: "fa-solid fa-bed" }
+        { text: "Ropa blanca", icon: "fa-solid fa-bed" },
+        { text: "Alarma de seguridad", icon: "fa-solid fa-bell" },
+        { text: "DirecTV", icon: "fa-solid fa-tv" }
       ],
       image: fachada2
     },
@@ -59,7 +61,9 @@ const Cabins = () => {
         { text: "Cocina Equipada", icon: "fa-solid fa-utensils" },
         { text: "Galería-cochera individual", icon: "fa-solid fa-car" },
         { text: "Calefactores en cada ambiente", icon: "fa-solid fa-thermometer-half" },
-        { text: "Ropa blanca", icon: "fa-solid fa-bed" }
+        { text: "Ropa blanca", icon: "fa-solid fa-bed" },
+        { text: "Alarma de seguridad", icon: "fa-solid fa-bell" },
+        { text: "DirecTV", icon: "fa-solid fa-tv" }
       ],
       image: fachada1
     }
