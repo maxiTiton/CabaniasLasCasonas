@@ -1,4 +1,4 @@
-import React, { useEffect } from 'react';
+import React from 'react';
 import './App.css';
 import Header from './components/Header';
 import Hero from './components/Hero';
@@ -8,31 +8,10 @@ import Gallery from './components/Gallery';
 import Contact from './components/Contact';
 import Location from './components/Location';
 import Footer from './components/Footer';
+import { useScrollAnimation } from './hooks';
 
 function App() {
-  useEffect(() => {
-    const revealEls = document.querySelectorAll('.reveal-on-scroll');
-    const galleryEls = document.querySelectorAll('.gallery-fade-in');
-
-    const observer = new IntersectionObserver(
-      (entries) => {
-        entries.forEach(entry => {
-          if (entry.isIntersecting) {
-            entry.target.classList.add('visible');
-            observer.unobserve(entry.target);
-          }
-        });
-      },
-      { threshold: 0.13 }
-    );
-
-    revealEls.forEach(el => observer.observe(el));
-    galleryEls.forEach(el => observer.observe(el));
-
-    return () => {
-      observer.disconnect();
-    };
-  }, []);
+  useScrollAnimation();
 
   return (
     <div className="App">

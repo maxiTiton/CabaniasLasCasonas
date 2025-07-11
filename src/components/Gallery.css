@@ -71,9 +71,14 @@
   color: #fff;
   border-color: #A05A2C;
 }
-.filter-btn:hover, .filter-btn.active:hover {
+.filter-btn:hover {
   background: var(--secondary-color);
   border-color: var(--secondary-color);
+  color: #fff;
+}
+.filter-btn.active:hover {
+  background: #A05A2C;
+  border-color: #A05A2C;
   color: #fff;
 }
 

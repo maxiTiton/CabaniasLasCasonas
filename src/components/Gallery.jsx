@@ -1,5 +1,6 @@
 import React, { useState, useRef, useEffect } from 'react'
 import './Gallery.css'
+import { useGalleryAnimation } from '../hooks'
 import fachada1 from '../assets/fachada1.jpg'
 import fachada2 from '../assets/fachada2.jpg'
 import fachada3 from '../assets/fachada3.jpg'
@@ -52,17 +53,17 @@ const Gallery = () => {
   const images = [
     {
       id: 1,
-      title: "Fachada Principal",
-      description: "Vista frontal de nuestras cabañas con diseño rústico",
+      title: "Balcón",
+      description: "Con vista al parque",
       category: "exterior",
       image: fachada1
     },
     {
       id: 2,
-      title: "Habitación Principal",
-      description: "Dormitorio espacioso con cama matrimonial y vista al bosque",
+      title: "Habitación Matrimonial",
+      description: "Dormitorio espacioso con cama matrimonial y vista al parque",
       category: "interior",
-      image: habitacionGrande
+      image: camaMatrimonial
     },
     {
       id: 3,
@@ -95,7 +96,7 @@ const Gallery = () => {
     {
       id: 7,
       title: "Balcón",
-      description: "Terraza con vistas espectaculares de las montañas",
+      description: "Terraza con vistas al parque",
       category: "exterior",
       image: balcon
     },
@@ -108,10 +109,10 @@ const Gallery = () => {
     },
     {
       id: 9,
-      title: "Estacionamiento",
-      description: "Cochera cubierta para tu vehículo",
-      category: "exterior",
-      image: cochera
+      title: "Camas planta baja",
+      description: "Dormitorio espacioso para 2 personas",
+      category: "interior",
+      image: habitacionGrande
     },
     {
       id: 10,
@@ -129,17 +130,64 @@ const Gallery = () => {
     },
     {
       id: 12,
-      title: "Fachada Nocturna",
-      description: "Iluminación cálida en las noches de montaña",
+      title: "Estacionamiento",
+      description: "Cochera cubierta para tu vehículo",
       category: "exterior",
-      image: fachada3
+      image: cochera
     }
+  ]
+
+  // Array completo con todas las imágenes para los filtros Interior y Exterior
+  const allImagesWithData = [
+    { id: 1, title: "Balcón", description: "Con vista al parque", category: "exterior", image: fachada1 },
+    { id: 2, title: "Habitación Matrimonial", description: "Dormitorio espacioso con cama matrimonial y vista al parque", category: "interior", image: camaMatrimonial },
+    { id: 3, title: "Cocina Equipada", description: "Cocina completa con todos los utensilios necesarios", category: "interior", image: cocina },
+    { id: 4, title: "Sala de Estar", description: "Ambiente cálido y acogedor con chimenea", category: "interior", image: hogar },
+    { id: 5, title: "Comedor", description: "Área de comedor con vista panorámica", category: "interior", image: comedor },
+    { id: 6, title: "Baño Principal", description: "Baño completo con ducha y amenities", category: "interior", image: baño },
+    { id: 7, title: "Balcón", description: "Terraza con vistas al parque", category: "exterior", image: balcon },
+    { id: 8, title: "Área de Parrilla", description: "Asador al aire libre para disfrutar al aire libre", category: "exterior", image: asador },
+    { id: 9, title: "Camas planta baja", description: "Dormitorio espacioso para 2 personas", category: "interior", image: habitacionGrande },
+    { id: 10, title: "Fachada Lateral", description: "Vista lateral de Casona Chica", category: "exterior", image: fachada2 },
+    { id: 11, title: "Habitación Superior", description: "Dormitorio en planta alta con ambiente íntimo", category: "interior", image: habitacionArriba },
+    { id: 12, title: "Estacionamiento", description: "Cochera cubierta para tu vehículo", category: "exterior", image: cochera },
+    { id: 13, title: "Fachada Lateral", description: "Vista lateral de Casona Grande", category: "exterior", image: fachada3 },
+    { id: 14, title: "Fachada Frontal", description: "Vista principal de las cabañas", category: "exterior", image: fachada4 },
+    { id: 15, title: "Noche Estrellada", description: "Ambiente nocturno serrano", category: "exterior", image: fachadaNoche },
+    { id: 16, title: "Atardecer", description: "Vista al atardecer desde las cabañas", category: "exterior", image: fachadaNoche2 },
+    { id: 17, title: "Frente Principal", description: "Entrada principal al complejo", category: "exterior", image: frente },
+    { id: 18, title: "Cochera Múltiple", description: "Estacionamiento para varios vehículos", category: "exterior", image: cocheras },
+    { id: 19, title: "Cochera Individual", description: "Estacionamiento privado", category: "exterior", image: cochera2 },
+    { id: 20, title: "Comedor", category: "interior", image: comedor2 },
+    { id: 21, title: "Comedor Familiar", description: "Espacio para comidas en familia", category: "interior", image: comedor3 },
+    { id: 22, title: "Cocina Moderna", description: "Cocina con electrodomésticos", category: "interior", image: cocina2 },
+    { id: 23, title: "Habitación/Sala de estar", category: "interior", image: habitacionChica },
+    { id: 24, title: "Habitación Alta", description: "Dormitorio con vista elevada", category: "interior", image: habitacionArriba2 },
+    { id: 25, title: "Sala Grande", description: "Espacio de estar amplio", category: "interior", image: grande },
+    { id: 26, category: "interior", image: cama },
+    { id: 27, category: "interior", image: cama2 },
+    { id: 28, title: "Camas Múltiples", description: "Dormitorio con varias camas", category: "interior", image: camasGrande },
+    { id: 29, title: "Baño", description: "Baño con antebaño", category: "interior", image: baños },
+    { id: 30, title: "Baño", category: "interior", image: baños2 },
+    { id: 31, title: "Baño", category: "interior", image: baño2 },
+    { id: 32, title: "Baño Moderno", description: "Baño con diseño moderno", category: "interior", image: baño3 },
+    { id: 33, title: "Baño", category: "interior", image: baño4 },
+    { id: 34, title: "Baño Funcional", description: "Baño práctico y funcional", category: "interior", image: baño5 },
+    { id: 35, title: "Baño Completo", description: "Baño con todos los servicios", category: "general", image: baño6 },
+    { id: 42, category: "interior", image: estante },
+    { id: 36, title: "Baño", category: "interior", image: baño7 },
+    { id: 43, category: "interior", image: florero },
+    { id: 37, title: "Ducha Moderna", description: "Ducha con diseño contemporáneo", category: "interior", image: ducha },
+    { id: 38, title: "Puerta Principal", description: "Entrada principal a la cabaña", category: "interior", image: puerta },
+    { id: 39, title: "Televisión", description: "Área de entretenimiento con TV", category: "interior", image: tele },
+    { id: 40, category: "interior", image: ventanas },
+    { id: 41, category: "interior", image: cafe },
   ]
 
   const categories = [
     { id: 'some', name: 'Algunas' },
-    { id: 'exterior', name: 'Exterior' },
     { id: 'interior', name: 'Interior' },
+    { id: 'exterior', name: 'Exterior' },
     { id: 'all', name: 'Todas' }
   ]
 
@@ -162,15 +210,18 @@ const Gallery = () => {
       }))
     : activeCategory === 'some'
       ? images
-      : images.filter(img => img.category === activeCategory)
+      : allImagesWithData.filter(img => img.category === activeCategory)
 
-  // Ensure activeImage is always valid
+  
+    // Ensure activeImage is always valid
   useEffect(() => {
     if (activeImage >= filteredImages.length) {
       setActiveImage(0)
     }
   }, [filteredImages, activeImage])
 
+  // Hook para animaciones dinámicas al cambiar filtro
+  useGalleryAnimation(filteredImages)
 
 
   const handleImageClick = (index) => {
@@ -218,7 +269,7 @@ const Gallery = () => {
           {filteredImages.map((image, index) => (
             <div
               key={image.id}
-              className="gallery-item"
+              className="gallery-item reveal-on-scroll fade-up" 
               onClick={() => handleImageClick(index)}
             >
               <img src={image.image} alt={image.title} className="gallery-image-real" />

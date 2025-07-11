@@ -93,10 +93,6 @@ const Cabins = () => {
     return () => clearInterval(interval)
   }, [activeCabin, isInView])
 
-
-
-
-
   useEffect(() => {
     setIsLoading({ reservar: false, verFotos: false })
     setCurrentImageIndex(0)
@@ -202,4 +198,4 @@ const Cabins = () => {
   )
 }
 
-export default Cabins 
+export default Cabins
