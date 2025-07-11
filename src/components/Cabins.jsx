@@ -153,7 +153,7 @@ const Cabins = () => {
               </div>
             </div>
             
-            <div className="cabin-actions">
+            <div className="cabin-actions cabin-actions-desktop">
               <button 
                 className="btn" 
                 onClick={handleReservar}
@@ -193,6 +193,23 @@ const Cabins = () => {
                     <span>{amenity.text}</span>
                   </div>
                 ))}
+              </div>
+              {/* Botones solo en mobile */}
+              <div className="cabin-actions cabin-actions-mobile">
+                <button 
+                  className="btn" 
+                  onClick={handleReservar}
+                  disabled={isLoading.reservar}
+                >
+                  {isLoading.reservar ? 'Navegando...' : 'Reservar Ahora'}
+                </button>
+                <button 
+                  className="btn btn-outline" 
+                  onClick={handleVerFotos}
+                  disabled={isLoading.verFotos}
+                >
+                  {isLoading.verFotos ? 'Navegando...' : 'Ver Más Fotos'}
+                </button>
               </div>
             </div>
           </div>

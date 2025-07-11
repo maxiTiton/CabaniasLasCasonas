@@ -346,6 +346,28 @@
   line-height: 1.6;
 }
 
+.cabin-actions-mobile {
+  display: none;
+}
+.cabin-actions-desktop {
+  display: flex;
+}
+
+@media (max-width: 480px) {
+  .cabin-actions-desktop {
+    display: none !important;
+  }
+  .cabin-actions-mobile {
+    display: flex !important;
+    flex-direction: row;
+    gap: 1.2rem;
+    margin-top: 1.2rem;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+  }
+}
+
 @media (max-width: 768px) {
   .cabins-tabs {
     flex-direction: column;
