@@ -3,9 +3,8 @@ import './Contact.css'
 
 const Contact = () => {
   const handleWhatsApp = () => {
-    const message = encodeURIComponent('Hola! Me interesa conocer más sobre las cabañas. ¿Podrían enviarme información?')
-    const whatsappUrl = `https://wa.me/5493586000002?text=${message}`
-    window.open(whatsappUrl, '_blank')
+    const whatsappUrl = `https://wa.me/5493586000002`;
+    window.open(whatsappUrl, '_blank');
   }
 
   const handleEmail = () => {
