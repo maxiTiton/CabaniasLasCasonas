@@ -8,6 +8,7 @@ import Gallery from './components/Gallery';
 import Contact from './components/Contact';
 import Location from './components/Location';
 import Footer from './components/Footer';
+import WhatsappButton from './components/WhatsappButton';
 import { useScrollAnimation } from './hooks';
 
 function App() {
@@ -23,6 +24,7 @@ function App() {
       <Contact />
       <Location />
       <Footer />
+      <WhatsappButton />
     </div>
   );
 }
