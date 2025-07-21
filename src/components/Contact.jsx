@@ -4,7 +4,7 @@ import './Contact.css'
 const Contact = () => {
   const handleWhatsApp = () => {
     const message = encodeURIComponent('Hola! Me interesa conocer más sobre las cabañas. ¿Podrían enviarme información?')
-    const whatsappUrl = `https://wa.me/5493584307111?text=${message}`
+    const whatsappUrl = `https://wa.me/5493586000002?text=${message}`
     window.open(whatsappUrl, '_blank')
   }
 
@@ -27,7 +27,7 @@ const Contact = () => {
                 <i className="fab fa-whatsapp"></i>
               </div>
               <h4>WhatsApp</h4>
-              <p>+54 9 358 430-7111<br />Sr. Guillermo Ropolo</p>
+              <p>+54 9 358 600-0002<br />Sr. Guillermo Ropolo</p>
               <button onClick={handleWhatsApp} className="contact-btn whatsapp">
                 Chatear por WhatsApp
               </button>
