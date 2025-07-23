@@ -34,7 +34,7 @@ const Contact = () => {
                   Chatear por WhatsApp
                 </button>
                 <p className="alternative-contact">
-                  <small>¿Sin respuesta? Contactá a </small><a href="#" onClick={(e) => { e.preventDefault(); handleChat('5493584208323'); }} className="whatsapp-link">Analía</a>
+                  <small>Contacto alternativo: </small><a href="#" onClick={(e) => { e.preventDefault(); handleChat('5493584208323'); }} className="whatsapp-link">Analía</a>
                 </p>
               </div>
             </div>
