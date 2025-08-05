@@ -261,17 +261,9 @@
   .hero-buttons .btn {
     padding: 12px 28px;
     font-size: 1rem;
-    min-width: 220px;
-    width: 220px;
-    text-align: center;
-  }
-  
-  .hero-buttons .btn-outline {
-    padding: 12px 28px;
-    font-size: 1rem;
-    min-width: 220px;
-    width: 220px;
-    text-align: center;
+    min-width: unset;
+    max-width: unset;
+    text-align: unset;
   }
   
   .hero-divider {
@@ -311,17 +303,6 @@
   .hero-buttons .btn {
     padding: 10px 15px;
     font-size: 0.95rem;
-    min-width: 200px;
-    width: 200px;
-    text-align: center;
-  }
-  
-  .hero-buttons .btn-outline {
-    padding: 10px 15px;
-    font-size: 0.95rem;
-    min-width: 200px;
-    width: 200px;
-    text-align: center;
   }
   .hero-divider {
     width: 85vw;

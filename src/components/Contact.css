@@ -116,7 +116,7 @@
 @media (max-width: 768px) {
   .contact-info {
     grid-template-columns: 1fr;
-    gap: 1.5rem;
+    gap: 0.4rem;
     max-width: 100%;
     margin-top: 1rem;
   }
@@ -146,7 +146,7 @@
 
 @media (max-width: 480px) {
   .contact-info {
-    gap: 1rem;
+    gap: 0.5rem;
     margin-top: 0.8rem;
   }
   
