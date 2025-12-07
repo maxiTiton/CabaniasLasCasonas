@@ -1,54 +1,57 @@
 import React, { useState, useRef, useEffect } from 'react'
 import './Gallery.css'
 import { useGalleryAnimation } from '../hooks'
-import fachada1 from '../assets/fachada1.jpg'
-import fachada2 from '../assets/fachada2.jpg'
-import fachada3 from '../assets/fachada3.jpg'
-import fachada4 from '../assets/fachada4.jpg'
-import habitacionGrande from '../assets/habitacionGrande.jpg'
-import habitacionChica from '../assets/habitacionChica.jpg'
-import habitacionArriba from '../assets/habitacionArriba.jpg'
-import cocina from '../assets/cocina.jpg'
-import comedor from '../assets/comedor.jpg'
-import baño from '../assets/baño.jpg'
-import hogar from '../assets/hogar.jpg'
-import balcon from '../assets/balcon.jpg'
-import asador from '../assets/asador.jpg'
-import cochera from '../assets/cochera.jpg'
-import baños2 from '../assets/baños2.jpg'
-import baños from '../assets/baños.jpg'
-import ventanas from '../assets/ventanas.jpg'
-import cochera2 from '../assets/cochera2.jpg'
-import fachadaNoche2 from '../assets/fachadaNoche2.jpg'
-import fachadaNoche from '../assets/fachadaNoche.jpg'
-import cocheras from '../assets/cocheras.jpg'
-import grande from '../assets/grande.jpg'
-import habitacionArriba2 from '../assets/habitacionArriba2.jpg'
-import puerta from '../assets/puerta.jpg'
-import tele from '../assets/tele.jpg'
-import cocina2 from '../assets/cocina2.jpg'
-import comedor3 from '../assets/comedor3.jpg'
-import cama2 from '../assets/cama2.jpg'
-import cama from '../assets/cama.jpg'
-import camasGrande from '../assets/camasGrande.jpg'
-import cafe from '../assets/cafe.jpg'
-import estante from '../assets/estante.jpg'
-import luces from '../assets/luces.jpg'
-import florero from '../assets/florero.jpg'
-import baño7 from '../assets/baño7.jpg'
-import camaMatrimonial from '../assets/camaMatrimonial.jpg'
-import baño6 from '../assets/baño6.jpg'
-import baño5 from '../assets/baño5.jpg'
-import baño4 from '../assets/baño4.jpg'
-import baño3 from '../assets/baño3.jpg'
-import baño2 from '../assets/baño2.jpg'
-import ducha from '../assets/ducha.jpg'
-import comedor2 from '../assets/comedor2.jpg'
-import frente from '../assets/frente.jpg'
+
+const fachada1 = '/images/fachada1.jpg'
+const fachada2 = '/images/fachada2.jpg'
+const fachada3 = '/images/fachada3.jpg'
+const fachada4 = '/images/fachada4.jpg'
+const habitacionGrande = '/images/habitacionGrande.jpg'
+const habitacionChica = '/images/habitacionChica.jpg'
+const habitacionArriba = '/images/habitacionArriba.jpg'
+const cocina = '/images/cocina.jpg'
+const comedor = '/images/comedor.jpg'
+const baño = '/images/baño.jpg'
+const hogar = '/images/hogar.jpg'
+const balcon = '/images/balcon.jpg'
+const asador = '/images/asador.jpg'
+const cochera = '/images/cochera.jpg'
+const baños2 = '/images/baños2.jpg'
+const baños = '/images/baños.jpg'
+const ventanas = '/images/ventanas.jpg'
+const cochera2 = '/images/cochera2.jpg'
+const fachadaNoche2 = '/images/fachadaNoche2.jpg'
+const fachadaNoche = '/images/fachadaNoche.jpg'
+const cocheras = '/images/cocheras.jpg'
+const grande = '/images/grande.jpg'
+const habitacionArriba2 = '/images/habitacionArriba2.jpg'
+const puerta = '/images/puerta.jpg'
+const tele = '/images/tele.jpg'
+const cocina2 = '/images/cocina2.jpg'
+const comedor3 = '/images/comedor3.jpg'
+const cama2 = '/images/cama2.jpg'
+const cama = '/images/cama.jpg'
+const camasGrande = '/images/camasGrande.jpg'
+const cafe = '/images/cafe.jpg'
+const estante = '/images/estante.jpg'
+const luces = '/images/luces.jpg'
+const florero = '/images/florero.jpg'
+const baño7 = '/images/baño7.jpg'
+const camaMatrimonial = '/images/camaMatrimonial.jpg'
+const baño6 = '/images/baño6.jpg'
+const baño5 = '/images/baño5.jpg'
+const baño4 = '/images/baño4.jpg'
+const baño3 = '/images/baño3.jpg'
+const baño2 = '/images/baño2.jpg'
+const ducha = '/images/ducha.jpg'
+const comedor2 = '/images/comedor2.jpg'
+const frente = '/images/frente.jpg'
 
 const Gallery = () => {
   const [activeImage, setActiveImage] = useState(0)
+  const [isModalOpen, setIsModalOpen] = useState(false)
   const lightboxRef = useRef(null)
+  const modalRef = useRef(null)
 
   const images = [
     {
@@ -242,6 +245,26 @@ const Gallery = () => {
     }, 100)
   }
 
+  const closeModal = () => {
+    setIsModalOpen(false)
+  }
+
+  // When modal opens, prevent background scrolling and focus modal
+  useEffect(() => {
+    const body = document.body
+    if (isModalOpen) {
+      // lock scroll
+      body.style.overflow = 'hidden'
+      // focus modal content shortly after render
+      setTimeout(() => {
+        modalRef.current?.focus()
+      }, 50)
+    } else {
+      body.style.overflow = ''
+    }
+    return () => { body.style.overflow = '' }
+  }, [isModalOpen])
+
 
 
   return (
@@ -288,6 +311,7 @@ const Gallery = () => {
                 src={filteredImages[activeImage]?.image} 
                 alt={filteredImages[activeImage]?.title} 
                 className="lightbox-image-real"
+                onClick={() => setIsModalOpen(true)}
               />
             </div>
             
@@ -310,6 +334,18 @@ const Gallery = () => {
             </div>
           </div>
         </div>
+        {isModalOpen && (
+          <div className="image-modal" role="dialog" aria-modal="true">
+            <div className="image-modal-content" ref={modalRef} tabIndex={-1}>
+              <button className="modal-close" aria-label="Cerrar" onClick={closeModal}>×</button>
+              <img
+                src={filteredImages[activeImage]?.image}
+                alt={filteredImages[activeImage]?.title}
+                className="modal-image"
+              />
+            </div>
+          </div>
+        )}
       </div>
     </section>
   )

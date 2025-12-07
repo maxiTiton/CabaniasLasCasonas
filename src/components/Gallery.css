@@ -399,6 +399,63 @@
   }
 }
 
+/* Minimal modal for carousel image click: dark backdrop + centered image + X close */
+.image-modal {
+  position: fixed;
+  inset: 0;
+  background: rgba(0,0,0,0.88);
+  /* Very high z-index so the modal always sits above any fixed header */
+  z-index: 2147483647;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 1rem;
+}
+.image-modal-content {
+  position: relative;
+  max-width: 1100px;
+  width: 100%;
+  max-height: 95vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.modal-image {
+  max-width: 100%;
+  max-height: 90vh;
+  object-fit: contain;
+  border-radius: 8px;
+  box-shadow: 0 12px 40px rgba(0,0,0,0.6);
+}
+.modal-close {
+  position: absolute;
+  /* ensure close button is visible and not clipped by any header */
+  top: 12px;
+  right: 12px;
+  background: rgba(255,255,255,0.06);
+  color: #fff;
+  border: none;
+  width: 44px;
+  height: 44px;
+  border-radius: 50%;
+  font-size: 1.6rem;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 2147483648;
+}
+.modal-close:hover { background: rgba(255,255,255,0.12); }
+
+@media (max-width: 768px) {
+  .modal-image { max-height: 75vh; }
+}
+
+@media (max-width: 480px) {
+  .modal-image { max-height: 60vh; }
+  .modal-close { top: 6px; right: 6px; width: 40px; height: 40px; }
+}
+
 :root {
   --primary-color-light: #A0522D;
 } 

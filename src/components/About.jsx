@@ -1,11 +1,12 @@
 import React from 'react'
 import './About.css'
-import fachadaNoche from '../assets/fachadaNoche.jpg'
-import fachadaNoche2 from '../assets/fachadaNoche2.jpg'
-import fachada1 from '../assets/fachada1.jpg'
-import balcon from '../assets/balcon.jpg'
-import alpaCorral from '../assets/alpaCorral.avif'
-import florero from '../assets/florero.jpg'
+
+const fachadaNoche = '/images/fachadaNoche.jpg'
+const fachadaNoche2 = '/images/fachadaNoche2.jpg'
+const fachada1 = '/images/fachada1.jpg'
+const balcon = '/images/balcon.jpg'
+const alpaCorral = '/images/alpaCorral.avif'
+const florero = '/images/florero.jpg'
 
 const infoCards = [
   {
