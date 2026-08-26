@@ -162,7 +162,7 @@
 
 .hero-buttons .btn {
   background: rgba(139, 69, 19, 0.6);
-  border: none;
+  border: 2px solid transparent;
   color: white;
   backdrop-filter: blur(10px);
   font-weight: 600;
