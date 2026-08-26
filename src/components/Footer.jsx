@@ -23,7 +23,7 @@ const Footer = () => {
       <div className="container">
         <div className="footer-content">
           <div className="footer-info">
-            <p>Cabañas Las Casonas | &copy; 2025 Todos los derechos reservados</p>
+            <p>Cabañas Las Casonas | &copy; 2026 Todos los derechos reservados</p>
           </div>
         </div>
       </div>

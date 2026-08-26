@@ -146,10 +146,13 @@ const Cabins = () => {
           <div className="cabin-left">
             <div className="cabin-image">
               <div className="image-container">
-                <img 
-                  src={cabinImages[activeCabin][currentImageIndex]} 
-                  alt={`${cabins[activeCabin].name} - Imagen ${currentImageIndex + 1}`} 
+                <img
+                  key={`${activeCabin}-${currentImageIndex}`}
+                  src={cabinImages[activeCabin][currentImageIndex]}
+                  alt={`${cabins[activeCabin].name} - Imagen ${currentImageIndex + 1}`}
                   className="cabin-image-real"
+                  loading="lazy"
+                  decoding="async"
                 />
               </div>
             </div>

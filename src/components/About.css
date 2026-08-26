@@ -2,6 +2,10 @@
   background: var(--background-light);
 }
 
+.about .section-title {
+  color: #222;
+}
+
 .about-content {
   display: grid;
   grid-template-columns: 1fr 1fr;
@@ -192,7 +196,8 @@
 
 .about-main-text {
   font-size: 1.15rem;
-  color: var(--text-dark);
+  font-weight: 400;
+  color: #404040;
   background: #fff8f0;
   border-radius: 15px;
   padding: 2rem 2.2rem;

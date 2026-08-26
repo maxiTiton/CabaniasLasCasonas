@@ -42,10 +42,10 @@ const About = () => {
         <div className="about-main">
           <div className="about-collage-block">
             <div className="about-collage-grid">
-              <img src={florero} alt="Florero" className="about-collage-img about-collage-img1" />
-              <img src={fachada1} alt="Fachada día" className="about-collage-img about-collage-img2" />
-              <img src={balcon} alt="Balcón" className="about-collage-img about-collage-img3" />
-              <img src={alpaCorral} alt="Alpa Corral" className="about-collage-img about-collage-img4" />
+              <img src={florero} alt="Florero" className="about-collage-img about-collage-img1" loading="lazy" decoding="async" />
+              <img src={fachada1} alt="Fachada día" className="about-collage-img about-collage-img2" loading="lazy" decoding="async" />
+              <img src={balcon} alt="Balcón" className="about-collage-img about-collage-img3" loading="lazy" decoding="async" />
+              <img src={alpaCorral} alt="Alpa Corral" className="about-collage-img about-collage-img4" loading="lazy" decoding="async" />
             </div>
           </div>
           <div className="about-text-block">

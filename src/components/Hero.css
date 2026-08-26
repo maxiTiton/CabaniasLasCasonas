@@ -259,15 +259,15 @@
   }
   
   .hero-buttons .btn {
-    padding: 12px 28px;
+    padding: 16px 28px;
     font-size: 1rem;
     min-width: 220px;
     width: 220px;
     text-align: center;
   }
-  
+
   .hero-buttons .btn-outline {
-    padding: 12px 28px;
+    padding: 16px 28px;
     font-size: 1rem;
     min-width: 220px;
     width: 220px;
@@ -309,15 +309,15 @@
     margin-bottom: 1.2rem;
   }
   .hero-buttons .btn {
-    padding: 10px 15px;
+    padding: 14px 15px;
     font-size: 0.95rem;
     min-width: 200px;
     width: 200px;
     text-align: center;
   }
-  
+
   .hero-buttons .btn-outline {
-    padding: 10px 15px;
+    padding: 14px 15px;
     font-size: 0.95rem;
     min-width: 200px;
     width: 200px;

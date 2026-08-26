@@ -1,5 +1,5 @@
 .contact {
-  background: #4E2A0E;
+  background: linear-gradient(160deg, #331C0C 0%, #4A2812 100%);
   color: white;
 }
 
@@ -26,7 +26,7 @@
   display: grid;
   grid-template-columns: 1fr 1fr;
   gap: 2rem;
-  max-width: 700px;
+  max-width: 820px;
 }
 
 .info-card {
@@ -36,17 +36,10 @@
   text-align: center;
   box-shadow: var(--shadow);
   border: 1px solid rgba(255, 255, 255, 0.3);
-  transition: transform 0.3s ease;
   display: flex;
   flex-direction: column;
   justify-content: space-between;
   height: 100%;
-}
-
-.info-card:hover {
-  transform: translateY(-3px);
-  background: white;
-  border-color: rgba(255, 255, 255, 0.5);
 }
 
 .info-icon {
@@ -82,7 +75,7 @@
   background: var(--primary-color);
   color: white;
   border: none;
-  padding: 0.8rem 1.5rem;
+  padding: 1.15rem 1.5rem;
   border-radius: 25px;
   font-size: 1rem;
   cursor: pointer;
@@ -139,7 +132,7 @@
   }
   
   .contact-btn {
-    padding: 0.8rem 1.5rem;
+    padding: 1.25rem 1.5rem;
     font-size: 1rem;
   }
 }
@@ -168,10 +161,10 @@
   }
   
   .contact-btn {
-    padding: 0.7rem 1.4rem;
+    padding: 1.15rem 1.4rem;
     font-size: 0.95rem;
   }
-} 
+}
 
 /* Estilos para el contacto alternativo */
 .alternative-contact {

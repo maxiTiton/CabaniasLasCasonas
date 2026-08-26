@@ -9,8 +9,8 @@
   --background-dark: #F5DEB3;
   --border-color: #CD853F;
   --shadow: 0 4px 6px rgba(139, 69, 19, 0.1);
-  --font-serif: 'Georgia', 'Times New Roman', serif;
-  --font-sans: 'Arial', sans-serif;
+  --font-serif: 'Playfair Display', 'Georgia', 'Times New Roman', serif;
+  --font-sans: 'Poppins', 'Arial', sans-serif;
 }
 
 * {
@@ -20,7 +20,7 @@
 }
 
 body {
-  font-family: var(--font-serif);
+  font-family: var(--font-sans);
   line-height: 1.6;
   color: var(--text-dark);
   background-color: var(--background-light);
@@ -32,7 +32,7 @@ body {
 
 /* Estilos generales */
 .container {
-  max-width: 1200px;
+  max-width: 1280px;
   margin: 0 auto;
   padding: 0 20px;
 }
