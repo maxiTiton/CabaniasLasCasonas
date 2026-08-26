@@ -187,8 +187,8 @@
   font-weight: 700;
   transition: all 0.3s ease;
   border-bottom: 2px solid transparent;
-  padding: 0.2rem 0.4rem;
-  border-radius: 4px;
+  padding: 0.2rem 0.6rem;
+  border-radius: 25px;
   background: rgba(139, 69, 19, 0.1);
   cursor: pointer;
   position: relative;
